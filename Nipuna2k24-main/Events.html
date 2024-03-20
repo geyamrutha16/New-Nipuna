@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Madimi+One&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/5daae9f372.js" crossorigin="anonymous"></script>
+    <link rel="icon" type="image/x-icon" href="./assets/calendar-days-regular.svg">
+    <link rel='stylesheet' type='text/css' media='screen' href='style.css'>
+
+
+    <title>Events</title>
+    <style>
+      .circle {
+      height: 24px;
+      width: 24px;
+      border-radius: 24px;
+      background-color: black;
+      position: fixed; 
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      z-index: 99999999; /* so that it stays on top of all other elements */
+    }
+      *{
+            margin: 0;
+            padding: 0;
+        }
+        .circle {
+      height: 24px;
+      width: 24px;
+      border-radius: 24px;
+      background-color: black;
+      position: fixed; 
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      z-index: 99999999; /* so that it stays on top of all other elements */
+    }
+        span{
+			margin-block:20px;
+			padding:20px;
+      position: fixed;
+		}
+		.sidenav {
+            position:fixed;
+		  height: 100%;
+		  width: 0;
+		  position: fixed;
+		  z-index: 1;
+		  top: 0;
+		  left: 0;
+		  backdrop-filter: blur(1px) saturate(200%);
+        -webkit-backdrop-filter: blur(4px) saturate(180%);
+            background-color: rgba(35, 31, 31, 0.95);
+		  overflow-x: hidden;
+		  transition: 0.5s;
+		  padding-top: 60px;
+		}
+		
+		.sidenav a {
+		  padding: 8px 8px 8px 32px;
+		  margin-block:20px;
+		  text-decoration: none;
+		  font-size: 20px;
+		  color: #ffffff;
+		  display: block;
+		  transition: 0.3s;
+		}
+		
+		.sidenav a:hover {
+		  color: #9edce9;
+		}
+		
+		.sidenav .closebtn {
+		  position: absolute;
+		  top: 0;
+		  right: 25px;
+		  font-size: 36px;
+		  margin-left: 50px;
+		}
+        .event_container{
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            font-family: "Madimi One", sans-serif;
+            font-weight: 300;
+            font-style: normal;
+        }
+
+        .event_container .list{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+
+        }
+        body {
+  background-color: black;
+}
+
+.container {
+  width: 1200px !important;
+  padding: 0 !important;
+  margin-right: auto;
+  margin-left: auto;
+
+  @media screen and (min-width: 992px) and (max-width: 1439px) {
+    max-width: 1279px !important;
+    padding: 0 !important;
+    margin: 0 80px !important;
+    width: auto !important;
+  }
+
+  @media screen and (max-width: 991px) {
+    max-width: 959px !important;
+    margin: 0 16px !important;
+    padding: 0 !important;
+    width: auto !important;
+  }
+}
+
+.gradient-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+  padding: 30px;
+  @media screen and (max-width: 991px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.container-title {
+  text-align: center;
+  padding: 0 !important;
+  margin-bottom: 40px;
+  font-size: 40px;
+  color: #fff;
+  font-weight: 600;
+  line-height: 60px;
+}
+
+.card {
+  max-width: 550px;
+  border: 0;
+  width: 100%;
+  margin-inline: auto;
+}
+
+.container-card {
+  position: relative;
+  border: 2px solid transparent;
+  background: linear-gradient(71deg, #080509, #1a171c, #080509);
+  background-clip: padding-box;
+  border-radius: 45px;
+  padding: 40px;
+  img {
+    margin-bottom: 32px;
+  }
+}
+
+.bg-green-box,
+.bg-white-box,
+.bg-yellow-box,
+.bg-blue-box {
+  position: relative;
+}
+
+.bg-green-box::after,
+.bg-white-box::after,
+.bg-yellow-box::after,
+.bg-blue-box::after {
+  position: absolute;
+  top: -1px;
+  bottom: -1px;
+  left: -1px;
+  right: -1px;
+  content: "";
+  z-index: -1;
+  border-radius: 45px;
+}
+
+.bg-green-box::after {
+  background: linear-gradient(71deg, #0d1212, #3da077, #0d1212);
+}
+
+.bg-white-box::after {
+  background: linear-gradient(71deg, #121013, #b0afb0, #121013);
+}
+
+.bg-yellow-box::after {
+  background: linear-gradient(71deg, #110e0e, #afa220, #110e0e);
+}
+
+.bg-blue-box::after {
+  background: linear-gradient(71deg, #0c0a0e, #5f6fad, #0c0a0e);
+}
+
+.card-title {
+  font-weight: 600;
+  color: white;
+  letter-spacing: -0.02em;
+  line-height: 40px;
+  font-style: normal;
+  font-size: 28px;
+  padding-bottom: 8px;
+}
+
+.card-description {
+  font-weight: 600;
+  line-height: 32px;
+  color: hsla(0, 0%, 100%, 0.5);
+  font-size: 16px;
+  max-width: 470px;
+}
+
+    </style>
+</head>
+<body>
+  <div id="mySidenav" class="sidenav" >
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="index.html"><i class="fa-solid fa-house" style="color: #ffffff;"></i>&nbsp; &nbsp;Home</a>
+    <a href="About.html"><i class="fa-solid fa-magnifying-glass" style="color: #ffffff;"></i>&nbsp; &nbsp;About</a>
+    <a href="Events.html"><i class="fa-regular fa-calendar-days" style="color: #fafafa;"></i>&nbsp; &nbsp; Events</a>
+    <a href="poster.html"><i class="fa-solid fa-signs-post" style="color: #fcfcfc;"></i> &nbsp; &nbsp;Poster</a>
+    <a href=https://docs.google.com/forms/d/e/1FAIpQLSfikl_teIM8Y3TwflnNdNAh88xa2-tWZMkuVf99rLTL0v51nQ/viewform target="_blank"><i class="fa-regular fa-address-card" style="color: #ffffff;"></i>&nbsp; &nbsp;Register</a>
+    <a href="contact.html"><i class="fa-regular fa-address-book" style="color: #f7f7f7;"></i> &nbsp; &nbsp;Contact</a>
+  </div>
+      
+      <br>
+      <span style="font-size:30px;cursor:pointer;color:white" onclick="openNav()">&#9776;</span>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="home">
+    <div class="event_container">
+        <div class="list">
+            <div class="container">
+                <p class="container-title">Dive into<br>following Events</p>
+                <div class="gradient-cards">
+                  <div class="card">
+                    <div class="container-card bg-green-box">
+                        <img src="./assets/person-chalkboard-solid.svg" style="width:100px;height:50px;border: 1px solid rgb(46, 242, 147);padding: 10px;border-radius: 30px;">
+                      <p class="card-title">Symposium Presentation</p>
+                      <p class="card-description">A symposium presentation is a formal talk or lecture given at a symposium, which is a conference 
+                        <br>
+                        <button class="button-33" role="button"><a style="text-decoration: none; color: white;" href="Events/symposium.html">Know more</a></button>
+                      </p>
+                    </div>
+                  </div>
+              
+                  <div class="card">
+                    <div class="container-card bg-white-box">
+                      <img src="https://cdn2.iconfinder.com/data/icons/explore-and-analysis-5/64/44-512.png"  style="width:100px;height:50px;border: 1px solid white;padding: 10px;border-radius: 30px;">
+                      <p class="card-title">Visual Abstract</p>
+                      <p class="card-description">A visual abstract is a graphical representation of the key findings . It is designed to summarize complex
+                        <br>
+                        <button class="button-33" role="button"><a style="text-decoration: none; color: white;" href="Events/visual.html">Know more</a></button>
+                      </p>
+                    </div>
+                  </div>
+              
+                  <div class="card">
+                    <div class="container-card bg-yellow-box">
+                        <img src="./assets/gears-solid.svg" style="width:100px;height:50px;border: 1px solid rgb(234, 231, 44);padding: 10px;border-radius: 30px;">
+
+                      <p class="card-title">Technical Trivium</p>
+                      <p class="card-description"> involve mastering fundamental concepts & logical problem-solving  within a specific technical domain
+                        <br>
+                        <button class="button-33" role="button"><a style="text-decoration: none; color: white;" href="Events/trivium.html">Know more</a></button>
+                      </p>
+                    </div>
+                  </div>
+              
+                  <div class="card">
+                    <div class="container-card bg-blue-box">
+                        <img src="./assets/people-arrows-solid.svg" style="width:100px;height:50px;border: 1px solid rgb(46, 75, 130);padding: 10px;border-radius: 30px;">
+                      <p class="card-title">Style Symphony</p>
+                      <p class="card-description">skillful integration of different literary devices, tones, and writing styles to convey a particular message
+                        <br>
+                        <button class="button-33" role="button"><a style="text-decoration: none; color: white;" href="Events/model.html">Know more</a></button>
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="card">
+                    <div class="container-card bg-green-box">
+                      <img src="/assets/brain-solid.svg" style="width:100px;height:50px;border: 1px solid rgb(46, 242, 147);padding: 10px;border-radius: 30px;">
+
+                      <p class="card-title">Brain Teasers</p>
+                      <p class="card-description">Brain teasers are puzzles, riddles, or tasks that are designed to challenge one's cognitive abilities 
+                        <br>
+                        <button class="button-33" role="button"><a style="text-decoration: none; color: white;" href="Events/microfilm.html">Know more</a></button>                      </p>
+                    </div>
+                  </div>
+
+                  <div class="card">
+                    <div class="container-card bg-white-box">
+                        <img src="./assets/user-solid (1).svg" style="width:100px;height:50px;border: 1px solid white;padding: 10px;border-radius: 30px;">
+
+                      <p class="card-title">Quick Fire Events</p>
+                      <p class="card-description">Events designed to test quick thinking, decision-making skills, and the ability to perform under pressure.
+                        <br>
+                        <button class="button-33" role="button"><a style="text-decoration: none; color: white;" href="Events/quick_fire.html">Know more</a></button>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+           
+        </div>
+    </div>
+    <script>
+        function openNav() {
+          document.getElementById("mySidenav").style.width = "250px";
+          document.getElementById("main").style.marginLeft = "250px";
+          document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+        }
+
+        function closeNav() {
+          document.getElementById("mySidenav").style.width = "0";
+          document.getElementById("main").style.marginLeft = "0";
+          document.body.style.backgroundColor = "white";
+        }
+        
+const coords = { x: 0, y: 0 };
+const circles = document.querySelectorAll(".circle");
+
+const colors = [
+  "#BCD4E6",
+  "#40E0D0",
+  "#B0E0E6",
+  "#ADD8E6",
+  "#7DF9FF",
+  "##5D8AA8",
+  "#81D8D0",
+  "#4682B4",
+  "#4B9CD3",
+  "#4F97A3",
+  "#73C2FB",
+  "#008080",
+  "#b22c5e",
+  "#ac265e",
+  "#9c155f",
+  "#950f5f",
+  "#830060",
+  "#7c0060",
+  "#680060",
+  "#60005f",
+  "#48005f",
+  "#3d005e"
+];
+
+circles.forEach(function (circle, index) {
+  circle.x = 0;
+  circle.y = 0;
+  circle.style.backgroundColor = colors[index % colors.length];
+});
+
+window.addEventListener("mousemove", function(e){
+  coords.x = e.clientX;
+  coords.y = e.clientY;
+  
+});
+
+function animateCircles() {
+  
+  let x = coords.x;
+  let y = coords.y;
+  
+  circles.forEach(function (circle, index) {
+    circle.style.left = x - 12 + "px";
+    circle.style.top = y - 12 + "px";
+    
+    circle.style.scale = (circles.length - index) / circles.length;
+    
+    circle.x = x;
+    circle.y = y;
+
+    const nextCircle = circles[index + 1] || circles[0];
+    x += (nextCircle.x - x) * 0.3;
+    y += (nextCircle.y - y) * 0.3;
+  });
+ 
+  requestAnimationFrame(animateCircles);
+}
+
+animateCircles();
+    </script>
+</body>
+</html>

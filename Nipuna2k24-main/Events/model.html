@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Model Conventation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Madimi+One&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/5daae9f372.js" crossorigin="anonymous"></script>
+    <link rel="icon" type="image/x-icon" href="/assets/people-arrows-solid.svg">
+    <link rel='stylesheet' type='text/css' media='screen' href='style2.css'>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .circle {
+      height: 24px;
+      width: 24px;
+      border-radius: 24px;
+      background-color: black;
+      position: fixed; 
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      z-index: 99999999; /* so that it stays on top of all other elements */
+    }
+        span{
+			margin-block:20px;
+			padding:20px;
+      position: fixed;
+		}
+		.sidenav {
+            position:fixed;
+		  height: 100%;
+		  width: 0;
+		  position: fixed;
+		  z-index: 1;
+		  top: 0;
+		  left: 0;
+		  backdrop-filter: blur(1px) saturate(200%);
+        -webkit-backdrop-filter: blur(4px) saturate(180%);
+            background-color: rgba(35, 31, 31, 0.95);
+		  overflow-x: hidden;
+		  transition: 0.5s;
+		  padding-top: 60px;
+		}
+		
+		.sidenav a {
+		  padding: 8px 8px 8px 32px;
+		  margin-block:20px;
+		  text-decoration: none;
+		  font-size: 20px;
+		  color: #ffffff;
+		  display: block;
+		  transition: 0.3s;
+		}
+		
+		.sidenav a:hover {
+		  color: #9edce9;
+		}
+		
+		.sidenav .closebtn {
+		  position: absolute;
+		  top: 0;
+		  right: 25px;
+		  font-size: 36px;
+		  margin-left: 50px;
+		}
+    </style>
+</head>
+<body>
+  <div id="mySidenav" class="sidenav" >
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="/index.html"><i class="fa-solid fa-house" style="color: #ffffff;"></i>&nbsp; &nbsp;Home</a>
+    <a href="/About.html"><i class="fa-solid fa-magnifying-glass" style="color: #ffffff;"></i>&nbsp; &nbsp;About</a>
+    <a href="/Events.html"><i class="fa-regular fa-calendar-days" style="color: #fafafa;"></i>&nbsp; &nbsp; Events</a>
+    <a href="/poster.html"><i class="fa-solid fa-signs-post" style="color: #fcfcfc;"></i> &nbsp; &nbsp;Poster</a>
+    <a href="#"><i class="fa-regular fa-address-card" style="color: #ffffff;"></i>&nbsp; &nbsp;Register</a>
+    <a href="/contact.html"><i class="fa-regular fa-address-book" style="color: #f7f7f7;"></i> &nbsp; &nbsp;Contact</a>
+  </div>
+          
+          <br>
+          <span style="font-size:30px;cursor:pointer;color:white" onclick="openNav()">&#9776;</span>
+          <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="home">
+          <div class="event_container">
+            <div class="list">
+                <div class="container">
+                    <p class="container-title">Style Symphony</p>
+                    <div class="gradient-cards">
+                      <div class="card">
+                        <div class="container-card bg-green-box">
+                            <img src="/assets/people-arrows-solid.svg" style="width:100px;height:50px;border: 1px solid rgb(46, 242, 147);padding: 10px;border-radius: 30px;">
+                          <p class="card-title">About</p>
+                          <p class="card-description">
+                            <br>
+                            "Style Symphony" is a term that can be interpreted in various ways depending on the context.                           </p>
+                          <p class="card-description">
+                            <br>
+                            It could refer to the harmonious combination or orchestration of different styles, elements, or components within a particular context, such as art, fashion, music, design, or writing.                          </p>
+                          <p class="card-description">
+                            <br>
+                            "Style Symphony" could refer to compositions that seamlessly incorporate elements from different musical genres or traditions, resulting in a rich and harmonious musical experience.                          </p>
+                        </div>
+                      </div>
+                      <div class="card">
+                        <div class="container-card bg-green-box">
+                            <img src="/assets/book-solid.svg" style="width:100px;height:50px;border: 1px solid rgb(46, 242, 147);padding: 10px;border-radius: 30px;">
+                          <p class="card-title">Rules</p>
+                          <p class="card-description">
+                            <br>
+                            1 . Understanding of Styles: Have a deep understanding of the different styles, techniques, or genres relevant to the specific discipline you're working in.                            </p>
+                           <p class="card-description">
+                            <br>
+                            2 . Clarity of Vision: Start with a clear vision or concept of what you want to achieve. Define the overall theme                          </p>
+                           <p class="card-description">
+                            <br>
+                            3 . Attention to Detail: Pay attention to the finer details of your work. Consider how subtle nuances or intricacies can enhance the overall impact                           <p class="card-description">
+                           </p>
+                    </div>
+                  </div>
+                  <div class="card">
+                    <div class="container-card bg-green-box">
+                        <img src="/assets/person-chalkboard-solid.svg" style="width:100px;height:50px;border: 1px solid rgb(46, 242, 147);padding: 10px;border-radius: 30px;">
+                      <p class="card-title">Student Coordinators</p>
+                      <p class="card-description">
+                        <br>
+                        K. Mounika -- 9902879432
+                      </p>
+                      <p class="card-description">
+                        <br>
+                        B. Chandu -- 7386032782
+                      </p>
+                      <p class="card-description">
+                      </p>
+                    </div>
+                  </div>
+                  <p class="container-title"><a href="/Events.html">More</a></p>
+              </div>
+            </div>
+              </div>
+            </div>
+          </div>
+          <script>
+            function openNav() {
+              document.getElementById("mySidenav").style.width = "250px";
+              document.getElementById("main").style.marginLeft = "250px";
+              document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+            }
+    
+            function closeNav() {
+              document.getElementById("mySidenav").style.width = "0";
+              document.getElementById("main").style.marginLeft = "0";
+              document.body.style.backgroundColor = "white";
+            }
+            
+const coords = { x: 0, y: 0 };
+const circles = document.querySelectorAll(".circle");
+
+const colors = [
+  "#BCD4E6",
+  "#40E0D0",
+  "#B0E0E6",
+  "#ADD8E6",
+  "#7DF9FF",
+  "##5D8AA8",
+  "#81D8D0",
+  "#4682B4",
+  "#4B9CD3",
+  "#4F97A3",
+  "#73C2FB",
+  "#008080",
+  "#b22c5e",
+  "#ac265e",
+  "#9c155f",
+  "#950f5f",
+  "#830060",
+  "#7c0060",
+  "#680060",
+  "#60005f",
+  "#48005f",
+  "#3d005e"
+];
+
+circles.forEach(function (circle, index) {
+  circle.x = 0;
+  circle.y = 0;
+  circle.style.backgroundColor = colors[index % colors.length];
+});
+
+window.addEventListener("mousemove", function(e){
+  coords.x = e.clientX;
+  coords.y = e.clientY;
+  
+});
+
+function animateCircles() {
+  
+  let x = coords.x;
+  let y = coords.y;
+  
+  circles.forEach(function (circle, index) {
+    circle.style.left = x - 12 + "px";
+    circle.style.top = y - 12 + "px";
+    
+    circle.style.scale = (circles.length - index) / circles.length;
+    
+    circle.x = x;
+    circle.y = y;
+
+    const nextCircle = circles[index + 1] || circles[0];
+    x += (nextCircle.x - x) * 0.3;
+    y += (nextCircle.y - y) * 0.3;
+  });
+ 
+  requestAnimationFrame(animateCircles);
+}
+
+animateCircles();
+        </script>
+</body>
+</html>

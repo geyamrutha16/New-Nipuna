@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="./assets/signs-post-solid.svg">
+    <script src="https://kit.fontawesome.com/5daae9f372.js" crossorigin="anonymous"></script>
+    
+    <title>Poster</title>
+    <link rel='stylesheet' type='text/css' media='screen' href='style.css'>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        nav{
+            background-color: rgb(183, 52, 240);
+            line-height: 60px;
+            text-align: center;
+        }
+        nav h1{
+            font-weight: bolder;
+            text-transform: uppercase;
+        }
+        .img{
+            display: flex;
+            width: 100%;
+            min-height: 100vh;
+            justify-content: center;
+            align-items: center;
+        }
+        .img img{
+            margin: 5%;
+            width:50%;
+            min-height: 100vh;
+            border: none;
+            border-radius: 20px;
+            box-shadow: 0px 0px 5px rgb(52, 49, 49);
+        }
+        @media (min-width: 320px) and (max-width: 560px) {
+  /* CSS */
+  .img img{
+    width:100%;
+  }
+
+}
+    </style>
+</head>
+<body>
+    <nav>
+        <h1 class="slide-left">Poster</h1>
+    </nav>
+    <div id="mySidenav" class="sidenav" >
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="index.html"><i class="fa-solid fa-house" style="color: #ffffff;"></i>&nbsp; &nbsp;Home</a>
+        <a href="About.html"><i class="fa-solid fa-magnifying-glass" style="color: #ffffff;"></i>&nbsp; &nbsp;About</a>
+        <a href="Events.html"><i class="fa-regular fa-calendar-days" style="color: #fafafa;"></i>&nbsp; &nbsp; Events</a>
+        <a href="poster.html"><i class="fa-solid fa-signs-post" style="color: #fcfcfc;"></i> &nbsp; &nbsp;Poster</a>
+        <a href=https://docs.google.com/forms/d/e/1FAIpQLSfikl_teIM8Y3TwflnNdNAh88xa2-tWZMkuVf99rLTL0v51nQ/viewform target="_blank"><i class="fa-regular fa-address-card" style="color: #ffffff;"></i>&nbsp; &nbsp;Register</a>
+        <a href="contact.html"><i class="fa-regular fa-address-book" style="color: #f7f7f7;"></i> &nbsp; &nbsp;Contact</a>
+      </div>
+      
+      <br>
+      <span style="font-size:30px;cursor:pointer;color:white" onclick="openNav()">&#9776;</span>
+    <div class="main">
+        <div class="img">
+            <img src="./assets/Nipuna poster final.jpeg" alt="poster">
+        </div>
+    </div>
+    <script>
+        function openNav() {
+          document.getElementById("mySidenav").style.width = "250px";
+          document.getElementById("main").style.marginLeft = "250px";
+          document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+        }
+    
+        function closeNav() {
+          document.getElementById("mySidenav").style.width = "0";
+          document.getElementById("main").style.marginLeft = "0";
+          document.body.style.backgroundColor = "white";
+        }
+    </script>
+</body>
+</html>
